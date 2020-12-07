@@ -1,0 +1,45 @@
+{
+  "title": "p5jSpeedRun",
+  "splits": {
+    "Idea": {
+      "start_time": "2020-12-07 11:57:11",
+      "end_time": "2020-12-07 11:57:22",
+      "elapsed_seconds": 11.706703,
+      "prev_best_time": 5
+    },
+    "Explain/Draw Idea": {
+      "start_time": "2020-12-07 11:57:22",
+      "end_time": "2020-12-07 11:57:26",
+      "elapsed_seconds": 4.60721,
+      "prev_best_time": "-"
+    },
+    "Initial MVP": {
+      "start_time": "2020-12-07 11:57:26",
+      "end_time": "-",
+      "elapsed_seconds": "-",
+      "prev_best_time": "-"
+    },
+    "Make Prettier": {
+      "start_time": "-",
+      "end_time": "-",
+      "elapsed_seconds": "-",
+      "prev_best_time": "-"
+    },
+    "Refactor": {
+      "start_time": "-",
+      "end_time": "-",
+      "elapsed_seconds": "-",
+      "prev_best_time": "-"
+    },
+    "Done": {
+      "start_time": "-",
+      "end_time": "-",
+      "elapsed_seconds": "-",
+      "prev_best_time": "-"
+    }
+  },
+  "start_time": "2020-12-07 11:57:11",
+  "end_time": "-",
+  "total_elapsed_seconds": 15.60721,
+  "current_split": "Initial MVP"
+}
