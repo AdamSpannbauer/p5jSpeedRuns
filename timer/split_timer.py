@@ -38,8 +38,8 @@ def elapsed_seconds(time_stamp, now=None):
 def perform_split(
     timer_instance, current_split_name=None, next_split_name=None, now=None
 ):
-    if current_split_name is None:
-        return
+    if current_split_name is None or current_split_name == "-":
+        return timer_instance
     else:
         current_split = timer_instance["splits"][current_split_name]
 
@@ -64,7 +64,47 @@ def perform_split(
     return timer_instance
 
 
-def split_timer(instance_file):
+def format_elapsed_sec(sec, default="00:00:00.00"):
+    try:
+        hours, rem = divmod(sec, 3600)
+        minutes, seconds = divmod(rem, 60)
+        return f"{int(hours):0>2}:{int(minutes):0>2}:{seconds:05.2f}"
+    except TypeError:
+        return default
+
+
+def print_splits(timer_instance):
+    # Create a table of times formatted like:
+    #
+    # ---------------------------------------
+    # |  00:00:38.94  -  Idea               |
+    # |  00:00:06.37  -  Explain/Draw Idea  |
+    # |  00:01:10.38  -  Initial MVP        |
+    # |  00:00:38.18  -  Make Prettier      |
+    # |  00:00:20.06  -  Refactor           |
+    # |  00:03:36.26  -  Done               |
+    # ---------------------------------------
+    # |  00:06:28.26  -  Total time         |
+    # ---------------------------------------
+    #
+
+    justify_len = max(len(key) for key in timer_instance["splits"])
+    hr = "-" * len("| 00:00:00.00  -  ") + "-" * (justify_len + 4)
+    print(f"\n{hr}")
+    for split_name, split_data in timer_instance["splits"].items():
+        justified_name = split_name.ljust(justify_len)
+        print(
+            f"|  {format_elapsed_sec(split_data['elapsed_seconds'])}  -  {justified_name}  |"
+        )
+    print(hr)
+    justified_name = "Total time".ljust(justify_len)
+    print(
+        f"|  {format_elapsed_sec(timer_instance['total_elapsed_seconds'])}  -  {justified_name}  |"
+    )
+    print(f"{hr}\n")
+
+
+def split_timer(instance_file, show_times=True):
     timer_instance = read_settings_file(instance_file)
     current_split_name, next_split_name = get_current_split(timer_instance)
 
@@ -74,9 +114,12 @@ def split_timer(instance_file):
         next_split_name=next_split_name,
     )
 
+    if show_times:
+        print_splits(timer_instance)
+
     with open(instance_file, "w") as f:
         json.dump(timer_instance, f, indent=2)
 
 
 if __name__ == "__main__":
-    split_timer("../timer_instance.json")
+    split_timer("../timer_instance.json", show_times=True)
