@@ -1,0 +1,45 @@
+{
+  "title": "p5jSpeedRun",
+  "splits": {
+    "Idea": {
+      "start_time": "2020-12-08 23:06:01",
+      "end_time": "2020-12-08 23:06:31",
+      "elapsed_seconds": 30.839267,
+      "prev_best_time": "-"
+    },
+    "Explain/Draw Idea": {
+      "start_time": "2020-12-08 23:06:31",
+      "end_time": "2020-12-08 23:08:35",
+      "elapsed_seconds": 124.399005,
+      "prev_best_time": "-"
+    },
+    "Initial MVP": {
+      "start_time": "2020-12-08 23:08:35",
+      "end_time": "2020-12-08 23:46:37",
+      "elapsed_seconds": 2282.125699,
+      "prev_best_time": "-"
+    },
+    "Make Prettier": {
+      "start_time": "2020-12-08 23:46:37",
+      "end_time": "2020-12-09 12:42:36",
+      "elapsed_seconds": 46559.902865,
+      "prev_best_time": "-"
+    },
+    "Refactor": {
+      "start_time": "2020-12-09 12:42:36",
+      "end_time": "2020-12-09 13:56:20",
+      "elapsed_seconds": 4424.724185,
+      "prev_best_time": "-"
+    },
+    "Done": {
+      "start_time": "2020-12-09 13:56:20",
+      "end_time": "2020-12-09 13:56:22",
+      "elapsed_seconds": 2.45563,
+      "prev_best_time": "-"
+    }
+  },
+  "start_time": "2020-12-08 23:06:01",
+  "end_time": "2020-12-09 13:56:22",
+  "total_elapsed_seconds": 53421.45563,
+  "current_split": "-"
+}
